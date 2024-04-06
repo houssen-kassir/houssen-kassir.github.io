@@ -25,14 +25,27 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body>
-<iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<iframe src="https://opengameart.org/sites/default/files/tomsong8.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+		
+<!--<iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>-->
+		
 <audio id="myAudio" autoplay loop>
   <source src="https://opengameart.org/sites/default/files/tomsong8.mp3" type="audio/mpeg">
   
   Your browser does not support the audio element.
 </audio>
+		
 <button onclick="playAudio()" type="button">Play Audio</button>
 <button onclick="pauseAudio()" type="button">Pause Audio</button>
+<script>
+	var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome){
+      $('#iframeAudio').remove()
+  }
+  else {
+      $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+  }
+</script>
 		
 <script>
 var x = document.getElementById("myAudio"); 
