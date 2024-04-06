@@ -25,6 +25,27 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body>
+<audio id="myAudio">
+  <source src="f.mp3" type="audio/mpeg">
+  
+  Your browser does not support the audio element.
+</audio>
+<button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button> 
+		
+<script>
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+</script>
+
+		
 <audio controls> <source src=”music/f.mp3” type="audio/mpeg">
 
 <!--<source src=”house.mp3” type=”audio/mpeg”>-->
